@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ public class StudentActivity
   public static String TAG = "StudentGrade.StudentActivity";
 
   private StudentContract.Presenter presenter;
+  Button outstandingGradeBtnClicked, mentionGradeBtnClicked ,passGradeBtnClicked;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,14 @@ public class StudentActivity
 
     // do the setup
     StudentScreen.configure(this);
+
+    outstandingGradeBtnClicked = findViewById(R.id.btnOutstandingGrade);
+    mentionGradeBtnClicked = findViewById(R.id.btnMentionGrade);
+    passGradeBtnClicked = findViewById(R.id.btnPassGrade);
+
+    outstandingGradeBtnClicked.setOnClickListener(view -> onOutstandingGradeBtnClicked(view));
+    mentionGradeBtnClicked.setOnClickListener(view -> onMentionGradeBtnClicked(view));
+    passGradeBtnClicked.setOnClickListener(view -> onPassGradeBtnClicked(view));
 
     if (savedInstanceState == null) {
       presenter.onStart();

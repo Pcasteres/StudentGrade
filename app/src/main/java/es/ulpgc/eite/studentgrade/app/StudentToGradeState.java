@@ -6,4 +6,7 @@ package es.ulpgc.eite.studentgrade.app;
 public class StudentToGradeState {
 
   public String data;
+  public boolean outstandingGradeBtnClicked;
+  public boolean mentionGradeBtnClicked;
+  public boolean passGradeBtnClicked;
 }

@@ -30,6 +30,7 @@ public class StudentPresenter implements StudentContract.Presenter {
     Log.e(TAG, "onStart()");
 
     // TODO: include code here if is necessary
+    state.data = Integer.toString(0);
 
   }
 
@@ -48,11 +49,12 @@ public class StudentPresenter implements StudentContract.Presenter {
     // use passed state if is necessary
     GradeToStudentState savedState = getStateFromNextScreen();
     if (savedState != null) {
+      state.data = savedState.data;
 
       // TODO: include code here if is necessary
 
     }
-
+      view.get().onDataUpdated(state);
     // TODO: include code here if is necessary
 
   }
