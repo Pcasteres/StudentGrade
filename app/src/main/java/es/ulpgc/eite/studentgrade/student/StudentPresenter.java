@@ -30,7 +30,7 @@ public class StudentPresenter implements StudentContract.Presenter {
     Log.e(TAG, "onStart()");
 
     // TODO: include code here if is necessary
-    state.data = Integer.toString(0);
+
 
   }
 
@@ -64,6 +64,7 @@ public class StudentPresenter implements StudentContract.Presenter {
     // Log.e(TAG, "onBackPressed()");
 
     // TODO: include code here if is necessary
+
   }
 
   @Override
@@ -88,9 +89,11 @@ public class StudentPresenter implements StudentContract.Presenter {
     // TODO: include code here if is necessary
     String pasa = model.getStoredData();
     StudentToGradeState newState = new StudentToGradeState();
+    newState.outstandingGradeBtnClicked = true;
+    newState.mentionGradeBtnClicked = false;
+    newState.passGradeBtnClicked = false;
     passStateToNextScreen(newState);
     view.get().navigateToNextScreen();
-
   }
 
   @Override
@@ -99,20 +102,22 @@ public class StudentPresenter implements StudentContract.Presenter {
     // TODO: include code here if is necessary
     String pasa = model.getStoredData();
     StudentToGradeState newState = new StudentToGradeState();
+    newState.outstandingGradeBtnClicked = false;
+    newState.mentionGradeBtnClicked = true;
+    newState.passGradeBtnClicked = false;
     passStateToNextScreen(newState);
     view.get().navigateToNextScreen();
-
 
   }
 
   @Override
   public void onPassGradeBtnClicked() {
     Log.e(TAG, "Suficiente");
-    // TODO: include code here if is necessary
-    String pasa = model.getStoredData();
     StudentToGradeState newState = new StudentToGradeState();
+    newState.outstandingGradeBtnClicked = false;
+    newState.mentionGradeBtnClicked = false;
+    newState.passGradeBtnClicked = true;
     passStateToNextScreen(newState);
-
     view.get().navigateToNextScreen();
 
   }
