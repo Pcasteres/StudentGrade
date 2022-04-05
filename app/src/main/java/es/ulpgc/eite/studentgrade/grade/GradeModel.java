@@ -8,9 +8,15 @@ public class GradeModel implements GradeContract.Model {
   public static String TAG = "StudentGrade.GradeModel";
 
   private String data;
+  private int[] not = {10,9,8,7,6,5};
 
   public GradeModel(String data) {
     this.data = data;
+  }
+
+  @Override
+  public int[] getNotas() {
+    return not;
   }
 
   @Override

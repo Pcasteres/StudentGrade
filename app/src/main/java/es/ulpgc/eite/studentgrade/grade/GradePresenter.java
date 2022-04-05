@@ -32,10 +32,16 @@ public class GradePresenter implements GradeContract.Presenter {
     // use passed state if is necessary
     StudentToGradeState savedState = getStateFromPreviousScreen();
     if (savedState != null) {
-
+      //Como he creado un array de notas tendremos en cuenta
+      //el valor según la posicion de este
+      int posUno, posDos;
       // TODO: include code here if is necessary
-      if(state.option == 1){
-
+      if(savedState.outstandingGradeBtnClicked){
+        posUno = 5;
+        posDos = 6;
+      }else if(savedState.mentionGradeBtnClicked){
+        posUno = 4;
+        posDos = 3;
       }
 
     }
