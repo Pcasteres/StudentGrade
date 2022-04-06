@@ -44,16 +44,17 @@ public class GradePresenter implements GradeContract.Presenter {
       }else if(savedState.mentionGradeBtnClicked){
         posUno = 2;
         posDos = 3;
-
       }else if(savedState.passGradeBtnClicked){
         posUno = 4;
         posDos = 5;
       }else{
         posUno = posDos = 0;
       }
+     // Aquí es donde me surge la duda
+      // state.data = Integer.toString(model.getNotas()[posUno]);
       //Hay que tener en cuenta que en el botón se presenta
-      //Un string por lo tanto
-     // state.data = Integer.toString(model.getNotas()[posUno]);
+      //Un string por lo tanto y hay que tener en cuenta
+      //la posicion del array que cogemos para cada boton
       state.btnUp = Integer.toString(model.getNotas()[posUno]);
       state.btnDown = Integer.toString(model.getNotas()[posDos]);
     }
@@ -101,7 +102,9 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onHigherGradeBtnClicked() {
 
     // TODO: include code here if is necessary
-
+    GradeToStudentState state = new GradeToStudentState();
+    passStateToPreviousScreen(state);
+    view.get().navigateToPreviousScreen();
 
   }
 
@@ -109,6 +112,9 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onLowerGradeBtnClicked() {
 
     // TODO: include code here if is necessary
+    GradeToStudentState state = new GradeToStudentState();
+    passStateToPreviousScreen(state);
+    view.get().navigateToPreviousScreen();
 
   }
 

@@ -3,6 +3,7 @@ package es.ulpgc.eite.studentgrade.grade;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ public class GradeActivity
 
   private GradeContract.Presenter presenter;
 
+  private Button buttonUp, buttonDown;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -27,7 +30,11 @@ public class GradeActivity
 
 
     Log.e(TAG, "onCreate()");
+    buttonUp = findViewById(R.id.btnHigherGrade);
+    buttonDown = findViewById(R.id.btnLowerGrade);
 
+    buttonUp.setOnClickListener(view -> onHigherGradeBtnClicked(view));
+    buttonDown.setOnClickListener(view -> onLowerGradeBtnClicked(view));
     // do the setup
     GradeScreen.configure(this);
 
@@ -87,8 +94,11 @@ public class GradeActivity
     Log.e(TAG, "onDataUpdated()");
     // deal with the data
     //String[] data = viewModel.data.split(",");
-    ((TextView) findViewById(R.id.btnLowerGrade)).setText(viewModel.btnUp);
-    ((TextView) findViewById(R.id.btnHigherGrade)).setText(viewModel.btnDown);
+    //TODO no lo entiendo haciendolo con "data"
+   /* ((TextView) findViewById(R.id.btnLowerGrade)).setText(data[0]);
+    ((TextView) findViewById(R.id.btnHigherGrade)).setText(data[1]);*/
+    ((TextView) findViewById(R.id.btnLowerGrade)).setText(viewModel.btnDown);
+    ((TextView) findViewById(R.id.btnHigherGrade)).setText(viewModel.btnUp);
   }
 
   @Override

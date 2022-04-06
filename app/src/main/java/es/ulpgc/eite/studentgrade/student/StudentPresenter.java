@@ -87,7 +87,6 @@ public class StudentPresenter implements StudentContract.Presenter {
   public void onOutstandingGradeBtnClicked() {
     Log.e(TAG, "Sobresaliente");
     // TODO: include code here if is necessary
-    String pasa = model.getStoredData();
     StudentToGradeState newState = new StudentToGradeState();
     newState.outstandingGradeBtnClicked = true;
     newState.mentionGradeBtnClicked = false;
@@ -100,7 +99,7 @@ public class StudentPresenter implements StudentContract.Presenter {
   public void onMentionGradeBtnClicked() {
       Log.e(TAG, "Notable");
     // TODO: include code here if is necessary
-    String pasa = model.getStoredData();
+    //String pasa = model.getStoredData();
     StudentToGradeState newState = new StudentToGradeState();
     newState.outstandingGradeBtnClicked = false;
     newState.mentionGradeBtnClicked = true;
