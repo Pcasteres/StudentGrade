@@ -103,6 +103,7 @@ public class GradePresenter implements GradeContract.Presenter {
 
     // TODO: include code here if is necessary
     GradeToStudentState state = new GradeToStudentState();
+
     passStateToPreviousScreen(state);
     view.get().navigateToPreviousScreen();
 
@@ -113,6 +114,7 @@ public class GradePresenter implements GradeContract.Presenter {
 
     // TODO: include code here if is necessary
     GradeToStudentState state = new GradeToStudentState();
+
     passStateToPreviousScreen(state);
     view.get().navigateToPreviousScreen();
 
