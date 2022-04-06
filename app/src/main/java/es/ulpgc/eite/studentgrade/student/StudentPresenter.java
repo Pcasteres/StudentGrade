@@ -53,6 +53,7 @@ public class StudentPresenter implements StudentContract.Presenter {
 
       // TODO: include code here if is necessary
 
+
     }
       view.get().onDataUpdated(state);
     // TODO: include code here if is necessary

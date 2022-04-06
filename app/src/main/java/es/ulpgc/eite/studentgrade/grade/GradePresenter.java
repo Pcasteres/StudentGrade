@@ -102,9 +102,9 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onHigherGradeBtnClicked() {
 
     // TODO: include code here if is necessary
-    GradeToStudentState state = new GradeToStudentState();
+    GradeToStudentState newState = new GradeToStudentState(state.data);
 
-    passStateToPreviousScreen(state);
+    passStateToPreviousScreen(newState);
     view.get().navigateToPreviousScreen();
 
   }
@@ -113,9 +113,9 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onLowerGradeBtnClicked() {
 
     // TODO: include code here if is necessary
-    GradeToStudentState state = new GradeToStudentState();
+    GradeToStudentState newState = new GradeToStudentState(state.data);
 
-    passStateToPreviousScreen(state);
+    passStateToPreviousScreen(newState);
     view.get().navigateToPreviousScreen();
 
   }
