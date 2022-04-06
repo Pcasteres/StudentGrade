@@ -6,6 +6,7 @@ package es.ulpgc.eite.studentgrade.grade;
 public class GradeViewModel {
 
   // put the view state here
-  public String data;
-  public int option;
+ // public String data;
+  public String btnUp;
+  public String btnDown;
 }

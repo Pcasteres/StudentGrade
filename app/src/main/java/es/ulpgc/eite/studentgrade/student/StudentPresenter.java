@@ -30,7 +30,7 @@ public class StudentPresenter implements StudentContract.Presenter {
     Log.e(TAG, "onStart()");
 
     // TODO: include code here if is necessary
-
+    state.data = Integer.toString(0);
 
   }
 

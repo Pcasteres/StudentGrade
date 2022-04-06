@@ -1,5 +1,7 @@
 package es.ulpgc.eite.studentgrade.grade;
 
+import android.util.Log;
+
 import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.studentgrade.app.AppMediator;
@@ -25,7 +27,7 @@ public class GradePresenter implements GradeContract.Presenter {
 
   @Override
   public void onStart() {
-    // Log.e(TAG, "onStart()");
+    Log.e(TAG, "onStart()");
 
     // TODO: include code here if is necessary
 
@@ -37,17 +39,24 @@ public class GradePresenter implements GradeContract.Presenter {
       int posUno, posDos;
       // TODO: include code here if is necessary
       if(savedState.outstandingGradeBtnClicked){
-        posUno = 5;
-        posDos = 6;
+        posUno = 0;
+        posDos = 1;
       }else if(savedState.mentionGradeBtnClicked){
-        posUno = 4;
+        posUno = 2;
         posDos = 3;
+
+      }else if(savedState.passGradeBtnClicked){
+        posUno = 4;
+        posDos = 5;
+      }else{
+        posUno = posDos = 0;
       }
-
+      //Hay que tener en cuenta que en el botón se presenta
+      //Un string por lo tanto
+     // state.data = Integer.toString(model.getNotas()[posUno]);
+      state.btnUp = Integer.toString(model.getNotas()[posUno]);
+      state.btnDown = Integer.toString(model.getNotas()[posDos]);
     }
-
-    // TODO: include code here if is necessary
-
   }
 
   @Override
@@ -63,7 +72,7 @@ public class GradePresenter implements GradeContract.Presenter {
     // Log.e(TAG, "onResume()");
 
     // TODO: include code here if is necessary
-
+    view.get().onDataUpdated(state);
   }
 
   @Override
