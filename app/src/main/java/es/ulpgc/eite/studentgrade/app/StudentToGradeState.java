@@ -8,7 +8,8 @@ public class StudentToGradeState {
   public boolean mentionGradeBtnClicked;
   public boolean passGradeBtnClicked;
 
-  public StudentToGradeState (){
+  public String data;
+  public StudentToGradeState(){
     this.outstandingGradeBtnClicked = outstandingGradeBtnClicked;
     this.mentionGradeBtnClicked = mentionGradeBtnClicked;
     this.passGradeBtnClicked = passGradeBtnClicked;

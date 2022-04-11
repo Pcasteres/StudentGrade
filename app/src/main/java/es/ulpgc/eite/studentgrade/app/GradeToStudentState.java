@@ -7,7 +7,4 @@ public class GradeToStudentState {
 
   public String data;
 
-    public GradeToStudentState(String data) {
-      this.data = data;
-    }
 }
