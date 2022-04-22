@@ -9,10 +9,4 @@ public class StudentToGradeState {
   public boolean passGradeBtnClicked;
 
   public String data;
-  public StudentToGradeState(){
-    this.outstandingGradeBtnClicked = outstandingGradeBtnClicked;
-    this.mentionGradeBtnClicked = mentionGradeBtnClicked;
-    this.passGradeBtnClicked = passGradeBtnClicked;
-  }
-
 }

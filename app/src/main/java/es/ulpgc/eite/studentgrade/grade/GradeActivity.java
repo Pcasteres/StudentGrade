@@ -93,12 +93,12 @@ public class GradeActivity
   public void onDataUpdated(GradeViewModel viewModel) {
     Log.e(TAG, "onDataUpdated()");
     // deal with the data
-    //String[] data = viewModel.data.split(",");
+   /* String[] data = viewModel.data.split(",");
     //TODO no lo entiendo haciendolo con "data"
-   /* ((TextView) findViewById(R.id.btnLowerGrade)).setText(data[0]);
+    ((TextView) findViewById(R.id.btnLowerGrade)).setText(data[0]);
     ((TextView) findViewById(R.id.btnHigherGrade)).setText(data[1]);*/
-    ((TextView) findViewById(R.id.btnLowerGrade)).setText(viewModel.btnDown);
-    ((TextView) findViewById(R.id.btnHigherGrade)).setText(viewModel.btnUp);
+    ((TextView) findViewById(R.id.btnLowerGrade)).setText(viewModel.btnUp);
+    ((TextView) findViewById(R.id.btnHigherGrade)).setText(viewModel.btnDown);
   }
 
   @Override

@@ -54,7 +54,7 @@ public class StudentActivity
   protected void onResume() {
     super.onResume();
     Log.e(TAG, "onResume()");
-
+    super.onResume();
     // load the data
     presenter.onResume();
   }
@@ -102,7 +102,6 @@ public class StudentActivity
 
     // deal with the data
     ((TextView) findViewById(R.id.tvStudentGrade)).setText(viewModel.data);
-
   }
 
 

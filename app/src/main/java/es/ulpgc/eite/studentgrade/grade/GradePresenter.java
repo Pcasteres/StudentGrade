@@ -55,8 +55,8 @@ public class GradePresenter implements GradeContract.Presenter {
       //Hay que tener en cuenta que en el botón se presenta
       //Un string por lo tanto y hay que tener en cuenta
       //la posicion del array que cogemos para cada boton
-      state.btnUp = Integer.toString(model.getNotas()[posUno]);
-      state.btnDown = Integer.toString(model.getNotas()[posDos]);
+      state.btnDown = Integer.toString(model.getNotas()[posUno]);
+      state.btnUp = Integer.toString(model.getNotas()[posDos]);
     }
   }
 
@@ -102,8 +102,8 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onHigherGradeBtnClicked() {
 
     // TODO: include code here if is necessary
-    GradeToStudentState newState = new GradeToStudentState();
-    state.data = state.btnUp;
+    GradeToStudentState newState = new GradeToStudentState(state.btnDown);
+    //state.data = state.btnUp;
     passStateToPreviousScreen(newState);
     view.get().navigateToPreviousScreen();
 
@@ -113,7 +113,7 @@ public class GradePresenter implements GradeContract.Presenter {
   public void onLowerGradeBtnClicked() {
 
     // TODO: include code here if is necessary
-    GradeToStudentState newState = new GradeToStudentState();
+    GradeToStudentState newState = new GradeToStudentState(state.btnUp);
     state.data = state.btnDown;
     passStateToPreviousScreen(newState);
     view.get().navigateToPreviousScreen();

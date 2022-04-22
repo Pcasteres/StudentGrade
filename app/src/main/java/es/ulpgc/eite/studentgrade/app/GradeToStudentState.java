@@ -7,4 +7,8 @@ public class GradeToStudentState {
 
   public String data;
 
+    public GradeToStudentState(String btnUp) {
+      this.data = btnUp;
+
+    }
 }

@@ -50,38 +50,28 @@ public class StudentPresenter implements StudentContract.Presenter {
     GradeToStudentState savedState = getStateFromNextScreen();
     if (savedState != null) {
       state.data = savedState.data;
-
       // TODO: include code here if is necessary
-
-
     }
       view.get().onDataUpdated(state);
     // TODO: include code here if is necessary
-
   }
 
   @Override
   public void onBackPressed() {
-    // Log.e(TAG, "onBackPressed()");
-
+     Log.e(TAG, "onBackPressed()");
     // TODO: include code here if is necessary
-
   }
 
   @Override
   public void onPause() {
     Log.e(TAG, "onPause()");
-
     // TODO: include code here if is necessary
-
   }
 
   @Override
   public void onDestroy() {
     // Log.e(TAG, "onDestroy()");
-
     // TODO: include code here if is necessary
-
   }
 
   @Override
@@ -107,7 +97,6 @@ public class StudentPresenter implements StudentContract.Presenter {
     newState.passGradeBtnClicked = false;
     passStateToNextScreen(newState);
     view.get().navigateToNextScreen();
-
   }
 
   @Override
@@ -119,7 +108,6 @@ public class StudentPresenter implements StudentContract.Presenter {
     newState.passGradeBtnClicked = true;
     passStateToNextScreen(newState);
     view.get().navigateToNextScreen();
-
   }
 
   private GradeToStudentState getStateFromNextScreen() {
@@ -129,6 +117,7 @@ public class StudentPresenter implements StudentContract.Presenter {
   private void passStateToNextScreen(StudentToGradeState state) {
     mediator.setNextStudentScreenState(state);
   }
+
 
 
   @Override
